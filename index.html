@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consilient - Smart Notes, Connected Ideas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #343A40;
+            background-color: #FFFFFF;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #E9ECEF;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #343A40;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #6C757D;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #343A40;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #343A40;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #6C757D;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        
+        .app-store-badge {
+            display: inline-block;
+            width: 200px;
+            height: 60px;
+            background: #000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        
+        .app-store-badge:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+        
+        .features h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 48px;
+            color: #343A40;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .feature-card {
+            background: #F8F9FA;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #343A40;
+        }
+        
+        .feature-card p {
+            color: #6C757D;
+        }
+        
+        /* Footer */
+        footer {
+            background: #F8F9FA;
+            padding: 48px 0;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: #343A40;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: #6C757D;
+            text-decoration: none;
+            display: block;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #343A40;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid #E9ECEF;
+            color: #6C757D;
+        }
+        
+        /* Page Specific Styles */
+        .page-header {
+            padding: 48px 0;
+            background: #F8F9FA;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 36px;
+            color: #343A40;
+        }
+        
+        .content {
+            padding: 48px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content h2 {
+            font-size: 28px;
+            margin: 32px 0 16px;
+            color: #343A40;
+        }
+        
+        .content h3 {
+            font-size: 20px;
+            margin: 24px 0 12px;
+            color: #343A40;
+        }
+        
+        .content p {
+            margin-bottom: 16px;
+            color: #6C757D;
+        }
+        
+        .content ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            color: #6C757D;
+        }
+        
+        .content li {
+            margin-bottom: 8px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .features h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Consilient</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Smart Notes, Connected Ideas</h1>
+            <p>Transform your thoughts into a living network of ideas. Consilient helps you capture, connect, and cultivate your knowledge.</p>
+            <a href="#" class="app-store-badge">Coming Soon to App Store</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Discover the Power of Connected Thinking</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Visual Organization</h3>
+                    <p>Arrange your folders on an infinite canvas, creating a spatial map of your knowledge that makes sense to you.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Smart Tags</h3>
+                    <p>Automatically discover connections between ideas with our intelligent tagging system that links related content across folders.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Rich Content</h3>
+                    <p>Capture complete thoughts with formatted text, images, and file attachments. Your ideas deserve more than plain text.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Privacy First</h3>
+                    <p>Your notes stay on your device with optional iCloud sync. No servers, no tracking, just your thoughts, secure and private.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Instant Search</h3>
+                    <p>Find any note, tag, or attachment in milliseconds. Our powerful search helps you rediscover forgotten insights.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Beautiful Design</h3>
+                    <p>A clean, adaptive interface that puts your content first. The app becomes a canvas for your ideas, not a distraction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="support.html#faq">FAQ</a></li>
+                        <li><a href="support.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://twitter.com/consilientapp">Twitter</a></li>
+                        <li><a href="mailto:support@consilientapp.com">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Consilient. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
