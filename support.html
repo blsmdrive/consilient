@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Consilient</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #343A40;
+            background-color: #FFFFFF;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #E9ECEF;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #343A40;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #6C757D;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #343A40;
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 48px 0;
+            background: #F8F9FA;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 36px;
+            color: #343A40;
+        }
+        
+        /* Content */
+        .content {
+            padding: 48px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content h2 {
+            font-size: 28px;
+            margin: 32px 0 16px;
+            color: #343A40;
+        }
+        
+        .content h3 {
+            font-size: 20px;
+            margin: 24px 0 12px;
+            color: #343A40;
+        }
+        
+        .content p {
+            margin-bottom: 16px;
+            color: #6C757D;
+        }
+        
+        .content ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            color: #6C757D;
+        }
+        
+        .content li {
+            margin-bottom: 8px;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            background: #F8F9FA;
+            padding: 24px;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            font-size: 18px;
+            font-weight: 500;
+            color: #343A40;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            margin-top: 16px;
+            color: #6C757D;
+            display: none;
+        }
+        
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+        
+        .faq-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        /* Contact Section */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+        
+        .contact-card {
+            background: #F8F9FA;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .contact-card h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #343A40;
+        }
+        
+        .contact-card p {
+            color: #6C757D;
+        }
+        
+        .contact-card a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: #F8F9FA;
+            padding: 48px 0;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: #343A40;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: #6C757D;
+            text-decoration: none;
+            display: block;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #343A40;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid #E9ECEF;
+            color: #6C757D;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 28px;
+            }
+            
+            .content h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Consilient</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="support.html" class="active">Support</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Support Center</h1>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content container">
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+            <p>Welcome to Consilient! Here's how to get the most out of your new thinking tool.</p>
+            
+            <h3>Creating Your First Folder</h3>
+            <p>To create a folder on the canvas:</p>
+            <ul>
+                <li>Tap and hold anywhere on the canvas</li>
+                <li>Choose a color for your folder</li>
+                <li>Give it a meaningful name</li>
+                <li>Start adding notes!</li>
+            </ul>
+            
+            <h3>Adding Notes</h3>
+            <p>Inside any folder, tap the + button to create a new note. You can:</p>
+            <ul>
+                <li>Format text with bold, italic, and headers</li>
+                <li>Add images and file attachments</li>
+                <li>Apply tags to connect ideas across folders</li>
+            </ul>
+            
+            <h3>Using Tags</h3>
+            <p>Tags are the magic that connects your ideas. When you add a tag to a note, Consilient automatically:</p>
+            <ul>
+                <li>Assigns a unique color to each tag</li>
+                <li>Shows connections between folders with shared tags</li>
+                <li>Makes all tagged content instantly searchable</li>
+            </ul>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>How do I sync my notes across devices?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Consilient uses iCloud to sync your notes across all your Apple devices. Make sure you're signed into the same iCloud account on all devices and have iCloud Drive enabled. Your notes will sync automatically in the background.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>Can I export my notes?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! You can export individual notes as text files or export entire folders. Long-press on any note or folder and select "Export" from the menu. You can choose to export as plain text, markdown, or PDF.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>How do I restore deleted notes?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Deleted notes are moved to the Archive and can be restored within 30 days. Access the Archive from the main menu, find your note, and tap "Restore" to bring it back to its original folder.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>Is my data secure?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. All your notes are stored locally on your device and encrypted. If you use iCloud sync, your data is encrypted both in transit and at rest. We never have access to your notes - they're completely private to you.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>Can I customize folder colors?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Long-press on any folder and select "Edit" to change its color. Choose from our curated palette or create a custom color that represents your content perfectly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Need more help? We're here for you.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <h4>Email Support</h4>
+                    <p>Get help via email</p>
+                    <p><a href="mailto:dev.blsmdrive@gmail.com">dev.blsmdrive@gmail.com</a></p>
+                    <p>Response within 24 hours</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>Twitter</h4>
+                    <p>Quick questions & updates</p>
+                    <p><a href="https://twitter.com/consilientapp">@consilientapp</a></p>
+                    <p>Follow for tips & news</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>Feature Requests</h4>
+                    <p>Have an idea?</p>
+                    <p><a href="mailto:dev.blsmdrive@gmail.com">dev.blsmdrive@gmail.com</a></p>
+                    <p>We'd love to hear it!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="#">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://twitter.com/consilientapp">Twitter</a></li>
+                        <li><a href="mailto:dev.blsmdrive@gmail.com">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Consilient. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            element.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
