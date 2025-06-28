@@ -100,18 +100,18 @@
         }
         
         .app-store-badge {
-            display: inline-block;
+            display: inline-flex;
             width: 200px;
             height: 60px;
             background: #000;
             color: white;
             text-decoration: none;
             border-radius: 8px;
-            display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 500;
             transition: transform 0.3s ease;
+            margin: 0 auto;
         }
         
         .app-store-badge:hover {
@@ -283,7 +283,9 @@
         <div class="container">
             <h1>Smart Notes, Connected Ideas</h1>
             <p>Transform your thoughts into a living network of ideas. Consilient helps you capture, connect, and cultivate your knowledge.</p>
-            <a href="#" class="app-store-badge">Coming Soon to App Store</a>
+            <div style="text-align: center;">
+                <a href="#" class="app-store-badge">Coming Soon to App Store</a>
+            </div>
         </div>
     </section>
 
