@@ -42,10 +42,18 @@
         }
         
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-size: 24px;
             font-weight: 600;
             color: #343A40;
             text-decoration: none;
+        }
+        
+        .logo img {
+            height: 32px;
+            width: auto;
         }
         
         .nav-links {
@@ -247,7 +255,10 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">Consilient</a>
+            <a href="index.html" class="logo">
+                <img src="consile-logo.png" alt="Consilient Logo">
+                Consilient
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="support.html" class="active">Support</a></li>
@@ -363,13 +374,6 @@
                 </div>
                 
                 <div class="contact-card">
-                    <h4>Twitter</h4>
-                    <p>Quick questions & updates</p>
-                    <p><a href="https://twitter.com/consilientapp">@consilientapp</a></p>
-                    <p>Follow for tips & news</p>
-                </div>
-                
-                <div class="contact-card">
                     <h4>Feature Requests</h4>
                     <p>Have an idea?</p>
                     <p><a href="mailto:dev.blsmdrive@gmail.com">dev.blsmdrive@gmail.com</a></p>
@@ -409,7 +413,6 @@
                 <div class="footer-section">
                     <h4>Connect</h4>
                     <ul>
-                        <li><a href="https://twitter.com/consilientapp">Twitter</a></li>
                         <li><a href="mailto:dev.blsmdrive@gmail.com">Email</a></li>
                     </ul>
                 </div>
